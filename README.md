@@ -6,7 +6,7 @@
 npm init -y
 ```
 
-###### Instalar dependências
+###### Instalar pacotes
 ```console
 npm install ts-node -D
 
@@ -29,6 +29,28 @@ Inserir dentro de package.json > scripts
 
 ```console
 npm run dev
+```
+
+### Mobile
+###### Inicializar projeto
+```console
+expo init mobile
+> choose blank (TypeScript)
+```
+
+###### Instalar pacotes
+```console
+npm install @react-navigation/native
+
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+npm install @react-navigation/stack
+```
+
+###### Executar projeto
+
+```console
+npm start
 ```
 
  
