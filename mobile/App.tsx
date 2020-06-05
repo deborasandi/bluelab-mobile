@@ -1,12 +1,14 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
 import Login from './src/pages/login'
+import Home from './src/pages/home'
 
 export default function App() {
   return (
     <Login />
-  );
+    //<Home />
+  )
 }
 
 const styles = StyleSheet.create({
@@ -16,4 +18,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 import { StyleSheet, Text, View, ImageBackground, TextInput, Image,
-        KeyboardAvoidingView, TouchableWithoutFeedback,  Platform, Keyboard    } from 'react-native';
+        KeyboardAvoidingView, TouchableWithoutFeedback,  Platform, Keyboard    } from 'react-native'
 import {RectButton} from 'react-native-gesture-handler'
 import {Feather as Icon} from '@expo/vector-icons'
 

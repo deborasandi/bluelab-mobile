@@ -17,6 +17,13 @@ npm install express
 npm install ts-node-dev -D
 ```
 
+###### Instalar pacotes Mysql
+```console
+npm install knex --save
+
+npm install mysql
+```
+
 ###### Criar arquivo de configuração
 ```console
 npx tsc --init
@@ -45,6 +52,8 @@ npm install @react-navigation/native
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 
 npm install @react-navigation/stack
+
+npm install axios
 ```
 
 ###### Executar projeto
