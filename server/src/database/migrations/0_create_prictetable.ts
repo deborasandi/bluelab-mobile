@@ -1,7 +1,7 @@
 import * as Knex from 'knex'
 
 export async function up(knex: Knex){
-    return knex.schema.createTable('pricetable', table => {
+    return knex.schema.createTableIfNotExists('pricetable', table => {
         table.increments('id').primary()
         table.string('name').notNullable()
     })

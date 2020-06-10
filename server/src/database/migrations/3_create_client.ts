@@ -1,7 +1,7 @@
 import * as Knex from 'knex'
 
 export async function up(knex: Knex){
-    return knex.schema.createTable('client', table => {
+    return knex.schema.createTableIfNotExists('client', table => {
         table.increments('id').primary()
         table.string('name').notNullable()
         table.string('cpf_cnpj').notNullable()
@@ -17,8 +17,6 @@ export async function up(knex: Knex){
         table.string('resp_name').notNullable()
         table.string('resp_cpf').notNullable()
         table.string('resp_cel').notNullable()
-        table.string('username').notNullable()
-        table.string('password').notNullable()
         table.integer('pricetable_id').unsigned()
         table.foreign('pricetable_id').references('pricetable.id')
     })

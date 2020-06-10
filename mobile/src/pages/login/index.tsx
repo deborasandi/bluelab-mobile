@@ -1,10 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { StyleSheet, Text, View, ImageBackground, TextInput, Image,
-        KeyboardAvoidingView, TouchableWithoutFeedback,  Platform, Keyboard    } from 'react-native'
+        KeyboardAvoidingView, TouchableWithoutFeedback,  Platform, Keyboard, Alert } from 'react-native'
 import {RectButton} from 'react-native-gesture-handler'
 import {Feather as Icon} from '@expo/vector-icons'
+import api from '../../services/api'
+import {useNavigation, useRoute } from '@react-navigation/native'
 
 const Login = () => {
+  const navigation = useNavigation()
+
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+  function handleLogin() {
+    api.get(`user/${username}`).then(response => {
+      const u = response.data
+
+      if(!u) {
+        console.log('ferrou')
+        return
+      }
+
+      if(username === u.username && password === u.password){
+        navigation.navigate('Home', {username: u.username})
+      }
+    })
+  }
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -26,17 +48,19 @@ const Login = () => {
         <View style={styles.footer}>
           <Text style={styles.title}>Usuário</Text>
           <TextInput
-            //placeholder="Usuário"
+            value={username}
+            onChangeText={setUsername}
             style={styles.input}
           />
           <Text style={styles.title}>Senha</Text>
           <TextInput
-            //placeholder="Senha"
+            value={password}
+            onChangeText={setPassword}
             style={styles.input}
           />
           <RectButton
             style={styles.button}
-            //onPress={handleNavigateToPoints}
+            onPress={handleLogin}
           >
             <View style={styles.buttonIcon}>
               <Text>
