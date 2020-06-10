@@ -1,14 +1,17 @@
 import knex from 'knex';
 import path from 'path';
+import {DBParams} from '../utils/utils'
+
+const params = DBParams()
 
 var connection = knex({
   client: 'mysql',
   version: '5.7',
   connection: {
-    host : 'bluelabdb.c7tsyx37zboh.us-east-2.rds.amazonaws.com',
-    user : 'bluelabadmin',
-    password : 'bluelabadmin',
-    database : 'bluelabdb'
+    host : params.host,
+    user : params.user,
+    password : params.password,
+    database : params.database
   }
 });
 
