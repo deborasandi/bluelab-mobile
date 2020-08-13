@@ -1,23 +1,16 @@
-import * as path from 'path'
-import {DBParams} from './src/utils/utils'
-
-const params = DBParams()
+const path = require('path')
 
 module.exports = {
-  development: {
-    client: "mysql",
-    connection: {
-      host : params.host,
-      user : params.user,
-      password : params.password,
-      database : params.database
-    },
-    migrations: {
-      directory: path.resolve(__dirname, 'src', 'database', 'migrations')
-    },
-  },
-  production: {
-    //client: "mysql",
-    //connection: "mysql://root:123456@127.0.0.1:3306/knexdb",
-  },
-};
+    development: {
+        client: 'mysql',
+        connection: {
+            host : 'localhost',
+            user : 'root',
+            password : 'admin',
+            database : 'bluelab'
+        },
+        migrations: {
+            directory: path.resolve(__dirname, 'src', 'database', 'migrations')
+        },
+    }
+}

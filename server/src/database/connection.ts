@@ -1,18 +1,13 @@
-import knex from 'knex';
-import path from 'path';
-import {DBParams} from '../utils/utils'
+import Knex from 'knex'
 
-const params = DBParams()
-
-var connection = knex({
+const connection = Knex({
   client: 'mysql',
-  version: '5.7',
   connection: {
-    host : params.host,
-    user : params.user,
-    password : params.password,
-    database : params.database
+    host : 'localhost',
+    user : 'root',
+    password : 'admin',
+    database : 'bluelab'
   }
-});
+})
 
-export default connection;
+export default connection
